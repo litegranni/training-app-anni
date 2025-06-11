@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<div th:fragment="navbar" class="navbar">
+  <button type="button">Knapp 1</button>
+  <a th:href="@{/training}"><button type="button">Exercises</button></a>
+  <a th:href="@{/settings}"><button type="button">Settings</button></a>
+</div>
+</body>
+</html>

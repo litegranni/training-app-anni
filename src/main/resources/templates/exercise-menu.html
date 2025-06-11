@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Träningsmeny</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<div class="settings-container">
+    <h1 class="centered">Välj vy</h1>
+    <a th:href="@{/exercises}"><button>Alla övningar</button></a>
+    <a th:href="@{/plans}"><button>Träningsplaner</button></a>
+    <button type="button" onclick="location.href='/index'">Back to home</button>
+</div>
+</body>
+</html>

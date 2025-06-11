@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Workout Plans</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<div class="content-container">
+    <h1 class="centered">Träningsprogram</h1>
+
+    <div class="plans-container">
+        <div class="plan-card" th:each="plan : ${plans}">
+            <div class="plan-header">
+                <h2 th:text="${plan.title}"></h2>
+            </div>
+            <p class="plan-description" th:text="${plan.description}"></p>
+
+            <div class="exercises-section">
+                <h3>Övningar</h3>
+                <ul class="exercises-list">
+                    <li class="exercise-item" th:each="ex : ${plan.exercises}">
+                        <span class="exercise-name" th:text="${ex.name}"></span>
+                        <span class="muscle-group" th:text="${ex.muscleGroup}"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="back-button-container">
+        <button class="btn btn-secondary" type="button" onclick="location.href='/index'">Tillbaka till startsidan</button>
+    </div>
+</div>
+
+</body>
+</html>
